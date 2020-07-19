@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3jsNgMkYmRPpMPUKJOwslHbqjyT4aHhVti5JsFRoBC2rIVZvf41sddBi0sRnbxU6G9oX869m2A4+0Ox1/xXXSg==",
+  "dgSpecHash": "yfu3kedD6t2IIpqmcJoUSC2YYtQiEOkBulHjsukcdWzyYtnrx8HW1efkkPtpfCt/HSK/mQyCYwls1sMbXTXX9Q==",
   "success": true,
-  "projectFilePath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\HealthCatalystService.csproj",
+  "projectFilePath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\HealthCatalystService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vishn\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.6\\microsoft.aspnetcore.jsonpatch.3.1.6.nupkg.sha512",
     "C:\\Users\\vishn\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.6\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.6.nupkg.sha512",

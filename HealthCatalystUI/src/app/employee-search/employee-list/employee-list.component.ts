@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Employee } from '../../employee.model';
 import { EmployeeService } from '../../employee.service';
 import { Subject } from 'rxjs';
+
+
 import { Router } from '@angular/router';
-import { identifierModuleUrl } from '@angular/compiler';
-import { Toast, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-employee-list',
@@ -14,7 +15,8 @@ import { Toast, ToastrService } from 'ngx-toastr';
 export class EmployeeListComponent implements OnInit {
   @Input() employeeToSearch: string;
   @Input() sortBy: Subject<string>;
-  employees: Employee[];
+  employees: Employee[] = [];
+  isLoading = false;
 
   constructor(private employeeService: EmployeeService, private router: Router, private toastr: ToastrService) { }
   
@@ -23,11 +25,17 @@ export class EmployeeListComponent implements OnInit {
   }
 
   loadEmployeeList(){
+    this.isLoading = true;
     this.employeeService.GetAllEmployees()
     .subscribe(
-        response => {console.log(response); this.employees = response; }
+        response => 
+        {
+          console.log(response); 
+          this.employees = response;  
+          this.isLoading = false;
+          this.sortEmployeeList();
+        }
     );
-    this.sortEmployeeList();
   }
 
   OnClick(Id: number){

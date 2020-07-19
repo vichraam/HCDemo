@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\HealthCatalystService.csproj": {}
+    "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\HealthCatalystService.csproj": {}
   },
   "projects": {
-    "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\HealthCatalystService.csproj": {
+    "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\HealthCatalystService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\HealthCatalystService.csproj",
+        "projectUniqueName": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\HealthCatalystService.csproj",
         "projectName": "HealthCatalystService",
-        "projectPath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\HealthCatalystService.csproj",
+        "projectPath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\HealthCatalystService.csproj",
         "packagesPath": "C:\\Users\\vishn\\.nuget\\packages\\",
-        "outputPath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalyst\\HealthCatalystService\\obj\\",
+        "outputPath": "D:\\Chander\\Git\\LearningApp\\HCDemo\\HealthCatalystAPI\\HealthCatalystService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
