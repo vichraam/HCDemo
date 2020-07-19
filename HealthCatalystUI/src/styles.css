@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.my-container{
+    border: 1px solid green;
+}
+.my-row{
+    /* border: 1px solid gray; */
+    height: 130px;
+}
+.my-child-row{
+    border: 1px;
+    height: 33px;
+}
+.my-picture-row{
+    border: 3px;
+    height: 90px;
+}
+
+.my-picture{
+    height:95px;
+    width: 100px;
+}
+.my-title{
+    font-weight: bold;
+}
+
+#toast-container > div{
+    opacity: 1;
+}

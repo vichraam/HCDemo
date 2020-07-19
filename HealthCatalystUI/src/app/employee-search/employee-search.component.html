@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Employee Search</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="searchName">Search By Name</label> &nbsp;&nbsp;&nbsp;
+                <input type="text" class="form-control" id="searchName" name="employeeName"  [(ngModel)]="employeeToSearch">
+            </div>
+        </form>
+    </div>
+</div>
+<br/>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <form class="form-inline text-right">
+            <div class="form-group">
+                <label for="searchName">Sort By</label> &nbsp;&nbsp;&nbsp;
+                <select class="form-control" id="searchOption" (change)="selectChangeHandler($event)">
+                    <option></option>
+                    <option>Name</option>
+                    <option>Age</option>
+                    <option>State</option>
+                    <option>City</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="panel-body">
+        <app-employee-list [employeeToSearch]="employeeToSearch" [sortBy]="sortBy"></app-employee-list>
+    </div>
+</div>

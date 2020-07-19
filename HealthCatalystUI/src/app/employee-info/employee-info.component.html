@@ -1,0 +1,118 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Employee Info</h3>
+    </div>
+    <div class="panel-body">
+        <form (ngSubmit)="OnSubmitForm(empForm)" ngForm #empForm="ngForm" >
+            <input type="hidden" class="form-control" id="inputId" name="Id" value="0" [(ngModel)] ="employee.Id">
+            <input type="hidden" class="form-control" id="inputPicture" name="PicturePath" [(ngModel)] ="employee.PicturePath">
+            <input style="display:none;" type="file" accept=".gif,.jpg,.jpeg,.png" (change)="onFileSelected($event)" #fileInput>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img style="height: 200px; width: 200px;" name="picture" 
+                            src="{{employee.PicturePath}}"
+                            (click)="fileInput.click()"
+                            >
+                        
+                        <div class="form-group">
+                            <p class="help-block" style="font-size: x-small;text-align: center;" >Click on the image to change</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputFirstName" class="col-sm-4 control-label">First Name *</label>
+                                <div class="col-sm-8">
+                                  <input type="text" required tabindex="1" class="form-control" id="inputFirstName" name="FirstName" ngModel #FirstName="ngModel">
+                                  <span class="help-block" *ngIf="!FirstName.valid && FirstName.touched">Invalid first name</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputAddress1" class="col-sm-4 control-label">Address 1 *</label>
+                                <div class="col-sm-8">
+                                    <input type="text" required tabindex="5" class="form-control" id="inputAddress1" name="AddressLine1" ngModel #AddressLine1="ngModel" >
+                                    <span class="help-block" *ngIf="!AddressLine1.valid && AddressLine1.touched">Invalid address line 1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputLastName" class="col-sm-4 control-label">Last Name *</label>
+                                <div class="col-sm-8">
+                                  <input type="text" required class="form-control" tabindex="2" id="inputLastName" name="LastName"  ngModel #LastName="ngModel" >
+                                  <span class="help-block" *ngIf="!LastName.valid && LastName.touched">Invalid last name</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputAddress2" class="col-sm-4 control-label">Address 2</label>
+                                <div class="col-sm-8">
+                                    <input type="text" tabindex="6" class="form-control" id="inputAddress2" name="AddressLine2" ngModel >
+                                </div>
+                            </div>
+                        </div><br/>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputAge"class="col-sm-4 control-label">Age *</label>
+                                <div class="col-sm-3">
+                                  <input type="number" min="18" max="99" required tabindex="3" class="form-control" id="inputAge" name="Age" ngModel #Age="ngModel">
+                                  <span class="help-block" *ngIf="!Age.valid && Age.touched">Invalid age</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputCity" class="col-sm-4 control-label">City *</label>
+                                <div class="col-sm-6">
+                                    <input type="text" required tabindex="7" class="form-control" id="inputCity" name="City" ngModel #City="ngModel">
+                                    <span class="help-block" *ngIf="!City.valid && City.touched">Invalid City</span>
+                                </div>
+                            </div>
+                        </div><br/>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputInterests" class="col-sm-4 control-label">Interests</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" tabindex="4" rows="4" id="inputInterests" name="Interests" ngModel></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <label for="inputState" class="col-sm-4 control-label">State *</label>
+                                        <div class="col-sm-3">
+                                        <input type="text" required class="form-control" tabindex="8" id="inputState" name="State"  ngModel #State="ngModel">
+                                        <span class="help-block" *ngIf="!State.valid && State.touched">Invalid state</span>
+                                    </div>
+                                </div>
+                            </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <label for="inputZip" required class="col-sm-4 control-label">Zipcode *</label>
+                                        <div class="col-sm-5">
+                                        <input type="text" required class="form-control" tabindex="9" id="inputZip" name="Zipcode" ngModel #Zipcode="ngModel">
+                                        <span class="help-block" *ngIf="!Zipcode.valid && Zipcode.touched">Invalid Zipcode</span>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div><br/>
+                        <div class="row">
+                            <div class="col-xs-6"></div>
+                            <div class="col-xs-6">
+                                <div class="col-xs-4"></div>
+                                <div class="col-sm-8">
+                                    <button type="button" tabindex="11" class="col-sm-5 btn btn-info" routerLink="/employeeSearch">Cancel</button>
+                                    <div class="col-sm-2">&nbsp;&nbsp;&nbsp;</div>
+                                    <button type="submit" tabindex="10" class="col-sm-5 btn btn-primary" [disabled]="!empForm.valid" >Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>      
+    </div>
+</div>
