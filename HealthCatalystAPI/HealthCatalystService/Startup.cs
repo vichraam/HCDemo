@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.Extensions.Options;
 using System.ComponentModel;
+using HealthCatalystService.Repository;
 
 namespace HealthCatalystService
 {
@@ -31,9 +32,9 @@ namespace HealthCatalystService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(Configuration.GetConnectionString("EmployeeDbConn")));
+            
             services.AddControllers()
                 .ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
-                //.AddNewtonsoftJson(option => option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -44,12 +45,12 @@ namespace HealthCatalystService
                 });
 
             services.AddCors();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
-            services.AddCors(c =>
-            {
-                //c.AddPolicy("AllowOrigin", options => options.WithOrigins("http://localhost:4200"));
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-            });
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
