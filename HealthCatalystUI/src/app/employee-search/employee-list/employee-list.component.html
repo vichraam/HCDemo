@@ -1,10 +1,31 @@
-<div class="container" *ngIf="isLoading">
-  <p>Loading employees...</p>
+<div class="container loader" *ngIf="isLoading">
+    <div id="loader"></div>
 </div>
 <div class="container" *ngIf="employees.length <= 0 && !isLoading" >
   <p>No employees are availabe in the system.</p>
 </div>
-<div class="container" *ngIf="employees.length > 0 && !isLoading" >
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+
+    </div>
+    <div class="col-xs-5">
+      <div class="row">
+        <div class="col-xs-5">Enter Delay (ms) : </div>
+        <div class="col-xs-3">
+          <input type="number" class="form-control" id="delayDuration" name="delayDuration"  [(ngModel)]="delayTimeInMilliSeconds">
+        </div>
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-primary" (click)="loadEmployeeList()">Reload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <br> -->
+<hr>
+<div class="container animate-bottom" *ngIf="employees.length > 0 && !isLoading" >
   <div class="row my-row" *ngFor="let employee of employees|employeeFilter:employeeToSearch">
     <div class="col-lg-12">
       <div class="col-lg-1">
@@ -25,7 +46,6 @@
           <div class="col-lg-2 my-title">Interest: </div>
           <div class="col-lg-8">{{employee.Interests}}</div>
         </div>
-        
       </div>  
       <div class="col-lg-5">
         <div class="row my-child-row">

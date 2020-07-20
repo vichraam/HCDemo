@@ -15,6 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 export class EmployeeListComponent implements OnInit {
   @Input() employeeToSearch: string;
   @Input() sortBy: Subject<string>;
+  delayTimeInMilliSeconds: number = 0;
+
   employees: Employee[] = [];
   isLoading = false;
 
@@ -24,8 +26,14 @@ export class EmployeeListComponent implements OnInit {
     this.loadEmployeeList();
   }
 
-  loadEmployeeList(){
+  async loadEmployeeList(){
+    console.log("Started load process");
+    console.log(new Date());
     this.isLoading = true;
+    await this.delayProcess(this.delayTimeInMilliSeconds);
+    console.log("Calling WebAPI");
+    console.log(new Date());
+
     this.employeeService.GetAllEmployees()
     .subscribe(
         response => 
@@ -34,6 +42,8 @@ export class EmployeeListComponent implements OnInit {
           this.employees = response;  
           this.isLoading = false;
           this.sortEmployeeList();
+          console.log("End Load process");
+          console.log(new Date());
         }
     );
   }
@@ -57,6 +67,11 @@ export class EmployeeListComponent implements OnInit {
 
       this.toastr.success("The employee deleted successfuly.");
     }
+  
+  }
+
+  delayProcess(delayDuration:number){
+    return new Promise(resolve => setTimeout(resolve, delayDuration));
   }
 
   sortEmployeeList(){

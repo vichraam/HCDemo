@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Policy;
+using System.Threading;
 using System.Threading.Tasks;
 using HealthCatalystService.Model;
 using Microsoft.AspNetCore.Cors;
