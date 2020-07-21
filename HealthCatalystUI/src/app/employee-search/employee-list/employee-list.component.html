@@ -10,16 +10,16 @@
 </div>
 <div class="container" *ngIf="employees.length > 0 && !isLoading && !isError">
   <div class="row">
-    <div class="col-xs-7">
+    <div class="col-md-7">
 
     </div>
-    <div class="col-xs-5">
+    <div class="col-md-5">
       <div class="row">
-        <div class="col-xs-5">Enter Delay (ms) : </div>
-        <div class="col-xs-3">
+        <div class="col-md-5">Enter Delay (ms) : </div>
+        <div class="col-md-3">
           <input type="number" class="form-control" id="delayDuration" name="delayDuration"  [(ngModel)]="delayTimeInMilliSeconds">
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <button type="button" class="btn btn-primary" (click)="loadEmployeeList()">Reload</button>
         </div>
       </div>
