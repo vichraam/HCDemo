@@ -158,6 +158,5 @@ D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bi
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Debug\netcoreapp3.1\FluentAssertions.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\obj\Debug\netcoreapp3.1\HealthCatalystServiceTest.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\obj\Debug\netcoreapp3.1\HealthCatalystServiceTest.pdb
-D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Debug\netcoreapp3.1\HealthCatalystServiceTest.dll.config
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\obj\Debug\netcoreapp3.1\HealthCatalystServiceTest.csproj.CoreCompileInputs.cache
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Debug\netcoreapp3.1\xunit.runner.json

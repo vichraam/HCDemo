@@ -8,7 +8,6 @@ D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bi
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\Database\HealthCatalyst.db
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\Database\HealthCatalystTest.db
-D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\HealthCatalystServiceTest.dll.config
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\HealthCatalystServiceTest.deps.json
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\HealthCatalystServiceTest.runtimeconfig.json
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystServiceTest\bin\Release\netcoreapp3.1\HealthCatalystServiceTest.runtimeconfig.dev.json

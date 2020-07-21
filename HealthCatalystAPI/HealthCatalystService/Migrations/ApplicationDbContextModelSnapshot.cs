@@ -15,7 +15,7 @@ namespace HealthCatalystService.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.6");
 
-            modelBuilder.Entity("HealthCatalystService.Model.Employee", b =>
+            modelBuilder.Entity("HealthCatalystService.Model.People", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace HealthCatalystService.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employee");
+                    b.ToTable("People");
                 });
 #pragma warning restore 612, 618
         }

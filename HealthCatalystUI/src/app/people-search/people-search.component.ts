@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-employee-search',
-  templateUrl: './employee-search.component.html',
-  styleUrls: ['./employee-search.component.css']
+  selector: 'app-people-search',
+  templateUrl: './people-search.component.html',
+  styleUrls: ['./people-search.component.css']
 })
-export class EmployeeSearchComponent implements OnInit {
-  employeeToSearch: string;
+export class PeopleSearchComponent implements OnInit {
+  peopleToSearch: string;
   sortBy: Subject<string> = new Subject();
   constructor() { }
 

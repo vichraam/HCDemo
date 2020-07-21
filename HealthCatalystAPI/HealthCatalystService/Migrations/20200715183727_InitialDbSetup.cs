@@ -7,7 +7,7 @@ namespace HealthCatalystService.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Employee",
+                name: "People",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -25,14 +25,14 @@ namespace HealthCatalystService.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employee", x => x.Id);
+                    table.PrimaryKey("PK_People", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Employee");
+                name: "People");
         }
     }
 }

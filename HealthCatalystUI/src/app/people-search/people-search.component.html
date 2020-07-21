@@ -1,12 +1,12 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Employee Search</h3>
+        <h3 class="panel-title">People Search</h3>
     </div>
     <div class="panel-body">
         <form class="form-inline">
             <div class="form-group">
                 <label for="searchName">Search By Name</label> &nbsp;&nbsp;&nbsp;
-                <input type="text" class="form-control" id="searchName" name="employeeName"  [(ngModel)]="employeeToSearch">
+                <input type="text" class="form-control" id="searchName" name="peopleName"  [(ngModel)]="peopleToSearch">
             </div>
         </form>
     </div>
@@ -29,6 +29,6 @@
         </form>
     </div>
     <div class="panel-body">
-        <app-employee-list [employeeToSearch]="employeeToSearch" [sortBy]="sortBy"></app-employee-list>
+        <app-people-list [peopleToSearch]="peopleToSearch" [sortBy]="sortBy"></app-people-list>
     </div>
 </div>

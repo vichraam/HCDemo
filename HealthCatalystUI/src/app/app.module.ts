@@ -6,10 +6,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { EmployeeSearchComponent } from './employee-search/employee-search.component';
-import { EmployeeListComponent } from './employee-search/employee-list/employee-list.component';
-import { EmployeeFilterPipe } from './pipe/employee-filter.pipe';
-import { EmployeeInfoComponent } from './employee-info/employee-info.component';
+import { PeopleSearchComponent } from './people-search/people-search.component'; 
+import { PeopleListComponent } from './people-search/people-list/people-list.component';
+import { PeopleFilterPipe } from './pipe/people-filter.pipe';
+import { PeopleInfoComponent } from './people-info/people-info.component';
 import { HomeComponent } from './home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,19 +18,19 @@ import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'employeeSearch', component: EmployeeSearchComponent},
-  {path: 'employeeInfo', component: EmployeeInfoComponent},
-  {path: 'employeeInfo/:id', component: EmployeeInfoComponent}
+  {path: 'peopleSearch', component: PeopleSearchComponent},
+  {path: 'peopleInfo', component: PeopleInfoComponent},
+  {path: 'peopleInfo/:id', component: PeopleInfoComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    EmployeeSearchComponent,
-    EmployeeListComponent,
-    EmployeeFilterPipe,
-    EmployeeInfoComponent,
+    PeopleSearchComponent,
+    PeopleListComponent,
+    PeopleFilterPipe,
+    PeopleInfoComponent,
     HomeComponent
   ],
   imports: [

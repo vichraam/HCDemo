@@ -28,11 +28,10 @@ namespace HealthCatalystService
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(Configuration.GetConnectionString("EmployeeDbConn")));
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(Configuration.GetConnectionString("PeopleDbConn")));
+            services.AddScoped<IPeopleRepository, PeopleRepository>();
 
             services.AddControllers().ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
 
@@ -51,26 +50,13 @@ namespace HealthCatalystService
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-
-            //app.Use(async (context, nextMiddleware) =>
-            //{
-            //    context.Response.OnStarting(() =>
-            //    {
-            //        context.Response.Headers["Access-Control-Allow-Origin"] = "*";
-            //        context.Response.Headers["Access-Control-Allow-Methods"]= "GET,POST,OPTIONS,DELETE,PUT";
-            //        return Task.FromResult(0);
-            //    });
-            //    await nextMiddleware();
-            //});
-
+            
             app.UseHttpsRedirection();
             app.UseRouting();
 

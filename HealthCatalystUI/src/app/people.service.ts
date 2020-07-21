@@ -1,52 +1,52 @@
 import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Employee } from './employee.model';
+import { People } from './people.model';
 import { environment } from '../environments/environment';
 
 @Injectable({providedIn: 'root'})
-export class EmployeeService{
+export class PeopleService{
     serviceUrl : string = environment.serviceApiEndPoint ;
     
-    employees: Employee[];
+    peoples: People[];
 
     constructor(private http: HttpClient) {}
 
-    GetAllEmployees(){
-        return this.http.get<Employee[]>(this.serviceUrl);
+    GetAllPeoples(){
+        return this.http.get<People[]>(this.serviceUrl);
     }
 
-    GetEmployee(id: number){
-        return this.http.get<Employee>
+    GetPeople(id: number){
+        return this.http.get<People>
         (
             this.serviceUrl + "/" + id.toString()
         );
     }
     
-    CreateEmployee(employee: Employee){
-        console.log(employee);
+    CreatePeople(people: People){
+        console.log(people);
         console.log(this.serviceUrl);
         this.http.post(
             this.serviceUrl, 
-            employee
+            people
         )
         .subscribe(
             response => {console.log(response); }
         );
     }
 
-    UpdateEmployee(employee: Employee){
+    UpdatePeople(people: People){
         console.log(this.serviceUrl);
-        console.log(employee);
+        console.log(people);
         this.http.put(
             this.serviceUrl, 
-            employee
+            people
         )
         .subscribe(
             response => {console.log(response); }
         );
     }
 
-    DeleteEmployee(id: number){
+    DeletePeople(id: number){
         return this.http.delete(this.serviceUrl + "/" + id.toString());
     }
 }

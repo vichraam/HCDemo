@@ -1,14 +1,14 @@
 <div class="container loader" *ngIf="isLoading && !isError">
     <div id="loader"></div>
 </div>
-<div class="container" *ngIf="employees.length <= 0 && !isLoading && !isError" >
-  <p>No employees are availabe in the system.</p>
+<div class="container" *ngIf="peoples.length <= 0 && !isLoading && !isError" >
+  <p>No peoples are availabe in the system.</p>
 </div>
 <div class="alert alert-danger" *ngIf="isError">
-  <p>Failed to load employees.</p>
+  <p>Failed to load peoples.</p>
   <p> {{errorMessage}} </p>
 </div>
-<div class="container" *ngIf="employees.length > 0 && !isLoading && !isError">
+<div class="container" *ngIf="peoples.length > 0 && !isLoading && !isError">
   <div class="row">
     <div class="col-md-7">
 
@@ -20,7 +20,7 @@
           <input type="number" class="form-control" id="delayDuration" name="delayDuration"  [(ngModel)]="delayTimeInMilliSeconds">
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-primary" (click)="loadEmployeeList()">Reload</button>
+          <button type="button" class="btn btn-primary" (click)="loadPeopleList()">Reload</button>
         </div>
       </div>
     </div>
@@ -28,55 +28,55 @@
 </div>
 <!-- <br> -->
 <hr>
-<div class="container animate-bottom" *ngIf="employees.length > 0 && !isLoading && !isError"  >
-  <div class="row my-row" *ngFor="let employee of employees|employeeFilter:employeeToSearch">
+<div class="container animate-bottom" *ngIf="peoples.length > 0 && !isLoading && !isError"  >
+  <div class="row my-row" *ngFor="let people of peoples|peopleFilter:peopleToSearch">
     <div class="col-lg-12">
       <div class="col-lg-1">
         <div class="row my-picture-row" >
-          <img class="my-picture" *ngIf="employee.PicturePath.length > 0" src="{{employee.PicturePath}}" style="cursor: pointer;" (click)="OnClick(employee.Id)"/>
-          <img class="my-picture" *ngIf="employee.PicturePath == null || employee.PicturePath.length <=0" src="https://i.stack.imgur.com/l60Hf.png" alt="Image unavailable" style="cursor: pointer;" (click)="OnClick(employee.Id)"/>
+          <img class="my-picture" *ngIf="people.PicturePath.length > 0" src="{{people.PicturePath}}" style="cursor: pointer;" (click)="OnClick(people.Id)"/>
+          <img class="my-picture" *ngIf="people.PicturePath == null || people.PicturePath.length <=0" src="https://i.stack.imgur.com/l60Hf.png" alt="Image unavailable" style="cursor: pointer;" (click)="OnClick(people.Id)"/>
         </div>
       </div>  
       <div class="col-lg-4">
         <div class="row my-child-row" >
           <div class="col-lg-2 my-title">Name</div>
-          <div class="col-lg-8">{{employee.LastName}}, {{employee.FirstName}}</div>
+          <div class="col-lg-8">{{people.LastName}}, {{people.FirstName}}</div>
         </div>
         <div class="row my-child-row" >
           <div class="col-lg-2 my-title">Age: </div>
-          <div class="col-lg-8">{{employee.Age}} </div>
+          <div class="col-lg-8">{{people.Age}} </div>
         </div>
         <div class="row my-child-row" >
           <div class="col-lg-2 my-title">Interest: </div>
-          <div class="col-lg-8">{{employee.Interests}}</div>
+          <div class="col-lg-8">{{people.Interests}}</div>
         </div>
       </div>  
       <div class="col-lg-5">
         <div class="row my-child-row">
           <div class="col-lg-2 my-title">Address1: </div>
-          <div class="col-lg-4">{{employee.AddressLine1}}</div>
+          <div class="col-lg-4">{{people.AddressLine1}}</div>
           <div class="col-lg-1 my-title">State: </div>
-          <div class="col-lg-3">{{employee.State}}</div>
+          <div class="col-lg-3">{{people.State}}</div>
         </div>
         
         <div class="row my-child-row">
           <div class="col-lg-2 my-title">Address2: </div>
-          <div class="col-lg-4">{{employee.AddressLine2}}</div>
+          <div class="col-lg-4">{{people.AddressLine2}}</div>
           <div class="col-lg-1 my-title">Zip: </div>
-          <div class="col-lg-3">{{employee.Zipcode}}</div>
+          <div class="col-lg-3">{{people.Zipcode}}</div>
         </div>
         <div class="row my-child-row">
           <div class="col-lg-2 my-title">City: </div>
-          <div class="col-lg-4">{{employee.City}}</div>
+          <div class="col-lg-4">{{people.City}}</div>
         </div>
 
       </div>  
 
       <div class="col-lg-2">
           <div class="row"  style="vertical-align:middle; height: 100px;">
-              <button type="button" class="btn btn-primary" (click)="OnClick(employee.Id)">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="OnClick(people.Id)">Edit</button>
               &nbsp;&nbsp;&nbsp;
-              <button type="button" class="btn btn-danger" (click)="OnDelete(employee.Id)">Delete</button>
+              <button type="button" class="btn btn-danger" (click)="OnDelete(people.Id)">Delete</button>
           </div>
       </div>  
     </div>  

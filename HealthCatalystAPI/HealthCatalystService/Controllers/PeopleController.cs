@@ -20,10 +20,10 @@ namespace HealthCatalystService.Controllers
     [Route("api/[controller]")]
     [EnableCors("AllowOrigin")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class PeopleController : ControllerBase
     {
-        IEmployeeRepository repo;
-        public EmployeeController(IEmployeeRepository empRepo)
+        IPeopleRepository repo;
+        public PeopleController(IPeopleRepository empRepo)
         {
             repo = empRepo;
         }
@@ -33,8 +33,8 @@ namespace HealthCatalystService.Controllers
         {
             try
             {
-                var employeeList = await repo.GetEmployeesAsAsync();
-                return Ok(employeeList);
+                var people = await repo.GetPeoplesAsAsync();
+                return Ok(people);
             }
             catch(Exception ex)
             {
@@ -47,9 +47,9 @@ namespace HealthCatalystService.Controllers
         {
             try
             {
-                var employee = await repo.GetEmployeeAsAsync(id);
+                var person = await repo.GetPeopleAsAsync(id);
 
-                return Ok(employee);
+                return Ok(person);
             }
             catch(Exception ex)
             {
@@ -58,11 +58,11 @@ namespace HealthCatalystService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Employee employee)
+        public async Task<IActionResult> Post(People person)
         {
             try
             {
-                var id = await repo.CreateEmployeeAsAsync(employee); 
+                var id = await repo.CreatePeopleAsAsync(person); 
                 var message = new HttpResponseMessage(System.Net.HttpStatusCode.Created);
 
                 return Ok(message);
@@ -74,11 +74,11 @@ namespace HealthCatalystService.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(Employee employee)
+        public async Task<IActionResult> Put(People person)
         {
             try
             {
-                await repo.UpdateEmployeeAsAsync(employee);
+                await repo.UpdatePeopleAsAsync(person);
                 return Ok();
             }
             catch (Exception ex)
@@ -92,7 +92,7 @@ namespace HealthCatalystService.Controllers
         {
             try
             {
-                await repo.DeleteEmployeeAsAsync(id);
+                await repo.DeletePeopleAsAsync(id);
                 return Ok();
             }
             catch (Exception ex)

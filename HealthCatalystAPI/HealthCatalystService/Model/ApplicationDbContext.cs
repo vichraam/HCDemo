@@ -13,6 +13,6 @@ namespace HealthCatalystService.Model
 
         }
 
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<People> People { get; set; }
     }
 }

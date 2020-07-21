@@ -7,9 +7,9 @@ namespace HealthCatalystServiceTest
 {
     public class TestHelper
     {
-        public static Employee GetEmployee(string firstName, string lastName, int age, string addressLine1, string addressLine2, string city, string state, string zip, string interests, string picture = null)
+        public static People GetPeople(string firstName, string lastName, int age, string addressLine1, string addressLine2, string city, string state, string zip, string interests, string picture = null)
         {
-            var employee = new Employee
+            var people = new People
             {
                 Id = 0,
                 FirstName = firstName,
@@ -23,7 +23,7 @@ namespace HealthCatalystServiceTest
                 Zipcode = zip,
                 PicturePath = picture
             };
-            return employee;
+            return people;
         }
     }
 }

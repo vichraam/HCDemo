@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HealthCatalystService.Model
 {
-    public class Employee
+    public class People
     {
         [Key]
         public int Id { get; set; }
@@ -27,10 +27,5 @@ namespace HealthCatalystService.Model
         public int Age { get; set; }
         public string Interests { get; set; }
         public string PicturePath { get; set; }
-    }
-
-    public class EmployeeExtn:Employee
-    {
-        public string PictureContent { get; set; }
     }
 }

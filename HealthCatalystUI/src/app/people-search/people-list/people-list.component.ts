@@ -1,34 +1,33 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from '../../employee.model';
-import { EmployeeService } from '../../employee.service';
+import { People } from '../../people.model';
+import { PeopleService } from '../../people.service';
 import { Subject } from 'rxjs';
 
 
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 import { ToastrService } from 'ngx-toastr';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-employee-list',
-  templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  selector: 'app-people-list',
+  templateUrl: './people-list.component.html',
+  styleUrls: ['./people-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
-  @Input() employeeToSearch: string;
+export class PeopleListComponent implements OnInit {
+  @Input() peopleToSearch: string;
   @Input() sortBy: Subject<string>;
   delayTimeInMilliSeconds: number = 0;
 
-  employees: Employee[] = [];
+  peoples: People[] = [];
   isLoading = false;
   isError = false;
   errorMessage : string = null;
-  constructor(private employeeService: EmployeeService, private router: Router, private toastr: ToastrService) { }
+  constructor(private peopleService: PeopleService, private router: Router, private toastr: ToastrService) { }
   
   ngOnInit(){
-    this.loadEmployeeList();
+    this.loadPeopleList();
   }
 
-  async loadEmployeeList(){
+  async loadPeopleList(){
     console.log("Started load process");
     console.log(new Date());
     this.isLoading = true;
@@ -36,14 +35,14 @@ export class EmployeeListComponent implements OnInit {
     console.log("Calling WebAPI");
     console.log(new Date());
 
-    this.employeeService.GetAllEmployees()
+    this.peopleService.GetAllPeoples()
     .subscribe(
         response => 
         {
           console.log(response); 
-          this.employees = response;  
+          this.peoples = response;  
           this.isLoading = false;
-          this.sortEmployeeList();
+          this.sortPeopleList();
           console.log("End Load process");
           console.log(new Date());
         },
@@ -58,22 +57,22 @@ export class EmployeeListComponent implements OnInit {
 
   OnClick(Id: number){
     console.log(Id);
-    this.router.navigate(['/employeeInfo', Id.toString() ]);
+    this.router.navigate(['/peopleInfo', Id.toString() ]);
   }
 
   OnDelete(Id: number){
     console.log(Id);
-    if(confirm("Are you sure to delete the employee ?"))
+    if(confirm("Are you sure to delete the people ?"))
     {
-      this.employeeService.DeleteEmployee(Id).subscribe(
+      this.peopleService.DeletePeople(Id).subscribe(
         response => 
         {
           console. log(response); 
-          this.loadEmployeeList();
+          this.loadPeopleList();
         }
       );
 
-      this.toastr.success("The employee deleted successfuly.");
+      this.toastr.success("The people deleted successfuly.");
     }
   
   }
@@ -82,21 +81,21 @@ export class EmployeeListComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, delayDuration));
   }
 
-  sortEmployeeList(){
+  sortPeopleList(){
     
     this.sortBy.subscribe(v => { 
-      if (this.employees.length > 0) {
+      if (this.peoples.length > 0) {
         if(v.toLowerCase() === "name"){
-          this.employees = this.employees.sort((a,b) => (a.LastName > b.LastName) ? 1: -1  );
+          this.peoples = this.peoples.sort((a,b) => (a.LastName > b.LastName) ? 1: -1  );
         }
         else if(v.toLowerCase() === "age"){
-          this.employees = this.employees.sort((a,b) => (a.Age > b.Age) ? 1: -1  );
+          this.peoples = this.peoples.sort((a,b) => (a.Age > b.Age) ? 1: -1  );
         }
         else if(v.toLowerCase() === "city"){
-          this.employees = this.employees.sort((a,b) => (a.City > b.City) ? 1: -1  );
+          this.peoples = this.peoples.sort((a,b) => (a.City > b.City) ? 1: -1  );
         }
         else if(v.toLowerCase() === "state"){
-          this.employees = this.employees.sort((a,b) => (a.State > b.State) ? 1: -1  );
+          this.peoples = this.peoples.sort((a,b) => (a.State > b.State) ? 1: -1  );
         }
         else{
           // do nothing

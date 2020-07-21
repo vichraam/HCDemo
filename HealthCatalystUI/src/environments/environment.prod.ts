@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serviceApiEndPoint: "https://hcwebapidemo.azurewebsites.net/api/employee"
+  serviceApiEndPoint: "https://hcwebapidemo.azurewebsites.net/api/people"
 };

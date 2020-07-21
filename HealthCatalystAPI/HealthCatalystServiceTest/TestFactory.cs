@@ -20,18 +20,18 @@ namespace HealthCatalystServiceTest
             var services = new ServiceCollection();
             
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(connectionString));
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IPeopleRepository, PeopleRepository>();
 
             serviceProvider = services.BuildServiceProvider();
         }
 
-        public IEmployeeRepository CreateEmployeeRepository()
+        public IPeopleRepository CreatePeopleRepository()
         {
-            return serviceProvider.GetService<IEmployeeRepository>();
+            return serviceProvider.GetService<IPeopleRepository>();
         }
-        public EmployeeController CreateEmployeeController()
+        public PeopleController CreatePeopleController()
         {
-            return new EmployeeController(CreateEmployeeRepository());
+            return new PeopleController(CreatePeopleRepository());
         }
         public ApplicationDbContext CreateApplicationDbContext()
         {

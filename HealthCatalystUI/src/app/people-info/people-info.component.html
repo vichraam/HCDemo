@@ -1,21 +1,21 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Employee Info</h3>
+        <h3 class="panel-title">People Info</h3>
     </div>
     <div class="panel-body">
         <form (ngSubmit)="OnSubmitForm(empForm)" ngForm #empForm="ngForm" >
-            <input type="hidden" class="form-control" id="inputId" name="Id" value="0" [(ngModel)] ="employee.Id">
-            <input type="hidden" class="form-control" id="inputPicture" name="PicturePath" [(ngModel)] ="employee.PicturePath">
+            <input type="hidden" class="form-control" id="inputId" name="Id" value="0" [(ngModel)] ="people.Id">
+            <input type="hidden" class="form-control" id="inputPicture" name="PicturePath" [(ngModel)] ="people.PicturePath">
             <input style="display:none;" type="file" accept=".gif,.jpg,.jpeg,.png" (change)="onFileSelected($event)" #fileInput>
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">
                         <img style="height: 200px; width: 200px;" name="picture" 
-                            *ngIf="employee.PicturePath.length > 0"
-                            src="{{employee.PicturePath}}"
+                            *ngIf="people.PicturePath.length > 0"
+                            src="{{people.PicturePath}}"
                             (click)="fileInput.click()"
                             >
-                        <img style="height: 200px; width: 200px;" *ngIf="employee.PicturePath == null || employee.PicturePath.length <=0" 
+                        <img style="height: 200px; width: 200px;" *ngIf="people.PicturePath == null || people.PicturePath.length <=0" 
                             src="https://i.stack.imgur.com/l60Hf.png"
                             (click)="fileInput.click()"
                             >
@@ -109,7 +109,7 @@
                             <div class="col-md-6">
                                 <div class="col-md-4"></div>
                                 <div class="col-sm-8">
-                                    <button type="button" tabindex="11" class="col-sm-5 btn btn-info" routerLink="/employeeSearch">Cancel</button>
+                                    <button type="button" tabindex="11" class="col-sm-5 btn btn-info" routerLink="/peopleSearch">Cancel</button>
                                     <div class="col-sm-2">&nbsp;&nbsp;&nbsp;</div>
                                     <button type="submit" tabindex="10" class="col-sm-5 btn btn-primary" [disabled]="!empForm.valid" >Save</button>
                                 </div>

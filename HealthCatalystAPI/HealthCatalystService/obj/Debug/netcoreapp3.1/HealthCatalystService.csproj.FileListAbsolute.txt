@@ -146,7 +146,6 @@ D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\bin\De
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.csprojAssemblyReference.cache
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.AssemblyInfoInputs.cache
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.AssemblyInfo.cs
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.csproj.CoreCompileInputs.cache
@@ -158,3 +157,4 @@ D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\De
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.dll
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.pdb
 D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.genruntimeconfig.cache
+D:\Chander\Git\LearningApp\HCDemo\HealthCatalystAPI\HealthCatalystService\obj\Debug\netcoreapp3.1\HealthCatalystService.csprojAssemblyReference.cache
