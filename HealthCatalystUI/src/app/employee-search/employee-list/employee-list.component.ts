@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-employee-list',
@@ -19,7 +20,8 @@ export class EmployeeListComponent implements OnInit {
 
   employees: Employee[] = [];
   isLoading = false;
-
+  isError = false;
+  errorMessage : string = null;
   constructor(private employeeService: EmployeeService, private router: Router, private toastr: ToastrService) { }
   
   ngOnInit(){
@@ -44,6 +46,12 @@ export class EmployeeListComponent implements OnInit {
           this.sortEmployeeList();
           console.log("End Load process");
           console.log(new Date());
+        },
+        error  => {
+          this.isError = true;
+          this.errorMessage = error.error.errorMessage;
+          console.log(error);
+          
         }
     );
   }

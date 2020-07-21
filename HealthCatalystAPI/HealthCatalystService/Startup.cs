@@ -32,9 +32,9 @@ namespace HealthCatalystService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(Configuration.GetConnectionString("EmployeeDbConn")));
-            
-            services.AddControllers()
-                .ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            services.AddControllers().ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
 
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -45,12 +45,10 @@ namespace HealthCatalystService
                 });
 
             services.AddCors();
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-
-            //services.AddCors(c =>
-            //{
-            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-            //});
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

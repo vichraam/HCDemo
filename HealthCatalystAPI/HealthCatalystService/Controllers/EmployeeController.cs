@@ -63,9 +63,7 @@ namespace HealthCatalystService.Controllers
             try
             {
                 var id = await repo.CreateEmployeeAsAsync(employee); 
-
                 var message = new HttpResponseMessage(System.Net.HttpStatusCode.Created);
-                message.Headers.Location = new Uri($"{Request.GetDisplayUrl()}/{id.ToString()}");
 
                 return Ok(message);
             }

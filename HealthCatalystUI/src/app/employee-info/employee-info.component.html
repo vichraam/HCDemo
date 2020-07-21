@@ -11,7 +11,12 @@
                 <div class="row">
                     <div class="col-xs-2">
                         <img style="height: 200px; width: 200px;" name="picture" 
+                            *ngIf="employee.PicturePath.length > 0"
                             src="{{employee.PicturePath}}"
+                            (click)="fileInput.click()"
+                            >
+                        <img style="height: 200px; width: 200px;" *ngIf="employee.PicturePath == null || employee.PicturePath.length <=0" 
+                            src="https://i.stack.imgur.com/l60Hf.png"
                             (click)="fileInput.click()"
                             >
                         

@@ -56,7 +56,7 @@ namespace HealthCatalystService.Repository
             {
                 var employee = await employeeDbContext.Employee.FindAsync(employeeId);
                 if (employee == null)
-                    throw new Exception("Invalid Employee Id");
+                    throw new Exception($"The employee id {employeeId} is unavailable.");
 
                 return employee;
             }
